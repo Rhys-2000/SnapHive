@@ -84,7 +84,25 @@
           <div class="col-8" style="text-align: left;">
             <div style="padding:5px;">
               <button id="retImages" type="button" class="btn btn-primary">View Hive</button>
+              <button id="hideImages" type="button" class="btn btn-secondary">Hide All Images</button>
             </div>
+
+
+
+            <div class="row align-items-start">
+              <div class="col-2"></div>
+              <div class="col-8">
+                <!-- NEW CHANGE: Input field and button for querying by username -->
+                <div class="mb-3">
+                  <label for="userNameInput" class="form-label">Enter Username</label>
+                  <input type="text" id="userNameInput" class="form-control" placeholder="Enter username">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="queryDocumentsByUserName()">Query by Username</button>
+              </div>
+              <div class="col-2"></div>
+            </div>
+
+
 
             <div id="ImageList">
               <h4>Please click the view Hive button if you wish to view images on the system.</h4>
