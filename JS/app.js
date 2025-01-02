@@ -57,6 +57,9 @@ function submitNewAsset() {
           $("#UpFile").val(''); // Clear the file input
           alert("Asset submitted successfully!");
           getImages(); // Refresh image list
+      },
+      error: function(error) {
+        alert("Error submitting asset.");
       }
   });
 }
@@ -86,7 +89,7 @@ function getImages() {
 
 // Function to delete image (same as before)
 function deleteImage(id) {
-  var deleteURI = "https://prod-128.westus.logic.azure.com/workflows/7b86a9e0c6c649b9aed3c3baa307a318/triggers/When_a_HTTP_request_is_received/paths/invoke/rest/v1/assets/" + id + "?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=Pe7zXmdI_bN61h3_Ld4K7LIjNT9bzvUpohc8s3AIIqI";
+  var deleteURI = "https://prod-128.westus.logic.azure.com/workflows/7b86a9e0c6c649b9aed3c3baa307a318/triggers/When_a_HTTP_request_is_received/paths/invoke/rest/v1/assets/" + id + "?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=Pe7zXmdI_bN61h3_Ld4K7LIjNT9bzvUpohc8s3AIIqI"; 
   if (confirm("Are you sure you want to delete this image?")) {
       $.ajax({
           url: deleteURI,
